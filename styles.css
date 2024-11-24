@@ -1,0 +1,17 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+/* Styling the text elements in the legend */
+.legend text {
+    font-family: sans-serif;
+    font-size: 16px;
+    fill: #333;
+}
+
+/* Styling the circle elements in the legend */
+.legend circle {
+    stroke: #000;
+    stroke-width: 1px;
+}
