@@ -1,6 +1,7 @@
 body {
     margin: 0;
     overflow: hidden; 
+    zoom: 200%;
 }
 
 /* Styling the title */
@@ -32,5 +33,3 @@ svg {
     stroke: #000000;
     stroke-width: 1px;
 }
-
-

@@ -18,17 +18,20 @@ export const colourLegend = (parent, props) => {
         .append('g')
         .attr('class', 'legend');
 
-    groupsEnter.merge(groups) // Merge update and enter selections
+    // Merge update and enter selections
+    groupsEnter.merge(groups) 
         .attr('transform', (d, i) => `translate(0, ${i * spacing})`);
 
+    // Update existing circles
     groupsEnter.append('circle')
-        .merge(groups.select('circle')) // Update existing circles
+        .merge(groups.select('circle')) 
         .attr('r', circleRadius)
         .attr('fill', colourScale);
 
+    // Update existing text
     groupsEnter
         .append('text')
-        .merge(groups.select('text')) // Update existing text
+        .merge(groups.select('text')) 
         .text(d => d)
         .attr('x', textOffset)
         .attr('y', 0);

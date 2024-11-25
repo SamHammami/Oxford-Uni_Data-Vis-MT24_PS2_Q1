@@ -23,15 +23,17 @@ export const sizeLegend = (parent, props) => {
         .append('g')
         .attr('class', 'legend');
 
-    groupsEnter.merge(groups) // Merge update and enter selections
+    // Merge update and enter selections
+    groupsEnter.merge(groups) 
         .attr('transform', (d, i) => `translate(0, ${i * spacing})`);
 
+    // Update existing circles
     groupsEnter.append('circle')
-        .merge(groups.select('circle')) // Update existing circles
-        // .attr('r', sizeScale) // Radius is set by the scale
-        .attr('r', d => sizeScale(d))
+        .merge(groups.select('circle')) 
+        .attr('r', sizeScale) // Radius is set by the scale
         .attr('fill', circleFill);
 
+    // Merge update and enter selections
     groupsEnter.append('text')
         .merge(groups.select('text')) // Update existing text
         .text(d => d)
@@ -42,5 +44,3 @@ export const sizeLegend = (parent, props) => {
     // Remove any unwanted elements (exit)
     groups.exit().remove();
 };
-
-

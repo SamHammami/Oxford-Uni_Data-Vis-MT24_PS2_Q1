@@ -1,9 +1,7 @@
 import { colourLegend } from './colourLegend.js';
 import { sizeLegend } from './sizeLegend.js';
 
-
-
-
+// Create an SVG element
 const svg = d3.select('svg')
     .attr('viewBox', '0 40 440 400')
     .attr('width', 400)
@@ -15,7 +13,7 @@ const colourScale = d3
     .domain(['apple', 'lemon', 'lime', 'orange'])
     .range(['#c11d1d', '#eae600', 'green', 'orange']);
 
-// Append the colour legend to the SVG
+// The SVG legend for colourLegend
 svg.append('g')
     .attr('transform', 'translate(100,150)')
     .call(
@@ -33,7 +31,7 @@ const sizeScale = d3
     .domain([0, 10])
     .range([0, 30]);
 
-// Append the size legend to the SVG
+// The SVG legend for sizeLegend
 svg.append('g')
     .attr('transform', 'translate(300,150)')
     .call(
@@ -44,5 +42,3 @@ svg.append('g')
             textOffset: 55,
             circleFill: 'rgba(0, 0, 0, 0.5)'
 })
-
-
