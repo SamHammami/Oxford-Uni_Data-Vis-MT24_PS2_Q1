@@ -9,7 +9,7 @@ export const sizeLegend = (parent, props) => {
     } = props;
 
     // Generate tick values from the size scale
-    const ticks = sizeScale.ticks(numTicks);
+    const ticks = sizeScale.ticks(numTicks).filter(d => d > 0).reverse();
 
     // Select all groups and bind data to each legend entry
     const groups = parent
@@ -17,13 +17,15 @@ export const sizeLegend = (parent, props) => {
         .data(ticks);
 
     // Handle the "enter" stage for new elements
-    const groupsEnter = groups  
-        .enter().append('g')
+    const groupsEnter = groups
+        .enter()
+        .append('g')
         .attr('class', 'legendEntry');
 
     groupsEnter
         .merge(groups) // Merge update and enter selections
-        .attr('transform', (d, i) => `translate(0, ${i * spacing})`);
+        .attr('transform', (d, i) => `translate(0, ${i * spacing})`)
+        ;
 
     groupsEnter
         .append('circle')
@@ -41,4 +43,9 @@ export const sizeLegend = (parent, props) => {
 
     // Remove any unwanted elements (exit)
     groups.exit().remove();
+
+    
 };
+
+
+

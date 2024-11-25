@@ -1,17 +1,75 @@
 body {
-    margin: 0px;
+    margin: 0;
     overflow: hidden;
 }
 
+
+/* body {
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+} */
+
+/* body {
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+} */
+
+
+/* h1 {
+    font-family: Arial;
+    text-align: center;
+    font-size: 24px;
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+} */
+
+/* h1 {
+    font-family: Arial;
+    text-align: center;
+    font-size: 24px;
+    margin: 0px;
+    padding: 10px;
+} */
+
+
+/* svg {
+    display: block;
+    margin: auto;
+
+    
+    border: 2px solid #ccc; 
+    border-radius: 90px;
+    padding: 2%; 
+
+    max-width: 100%;
+    max-height: 100%;
+    
+} */
+
+
+
+
+
 /* Styling the text elements in the legend */
-.legend text {
-    font-family: sans-serif;
-    font-size: 16px;
-    fill: #333;
+.legendEntry text {
+    font-family: Arial;
+    font-size: 22px;
+    fill: #666; 
 }
 
+
 /* Styling the circle elements in the legend */
-.legend circle {
-    stroke: #000;
+.legendEntry circle {
+    stroke: #000000;
     stroke-width: 1px;
 }
+
+

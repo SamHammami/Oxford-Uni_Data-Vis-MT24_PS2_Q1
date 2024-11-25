@@ -1,7 +1,17 @@
 import { colourLegend } from './colourLegend.js';
 import { sizeLegend } from './sizeLegend.js';
 
-const svg = d3.select('svg');
+
+// const svg = d3.select('svg');
+
+// const svg = d3.select('svg')
+//     .attr('width', 400)
+//     .attr('height', 400);
+
+
+const svg = d3.select('svg')
+    .attr('viewBox', '0 0 400 400')
+    .attr('preserveAspectRatio', 'xMidYMid meet');
 
 // Define a colour scale for the colour legend
 const colourScale = d3
@@ -12,27 +22,32 @@ const colourScale = d3
 // Append the colour legend to the SVG
 svg.append('g')
     .attr('transform', 'translate(100,150)')
-    .call(colourLegend, {
-        colourScale,
-        circleRadius: 20,
-        spacing: 55,
-        textOffset: 35
+    .call(
+        colourLegend, {
+            colourScale,
+            circleRadius: 20,
+            spacing: 55,
+            textOffset: 35
 });
 
+
+
 // Define a size scale for the size legend
-const sizeScale = d3.scaleSqrt()
+const sizeScale = d3
+    .scaleSqrt()
     .domain([0, 10])
     .range([0, 30]);
 
 // Append the size legend to the SVG
 svg.append('g')
     .attr('transform', 'translate(300,150)')
-    .call(sizeLegend, {
-        sizeScale,
-        numTicks: 5,
-        spacing: 45,
-        textOffset: 10,
-        circleFill: 'rgba(0, 0, 0, 0.5)'
-});
+    .call(
+        sizeLegend, {
+            sizeScale,
+            numTicks: 5,
+            spacing: 45,
+            textOffset: 38,
+            circleFill: 'rgba(0, 0, 0, 0.5)'
+})
 
 
