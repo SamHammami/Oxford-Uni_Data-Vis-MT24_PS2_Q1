@@ -28,20 +28,19 @@ export const sizeLegend = (parent, props) => {
 
     groupsEnter.append('circle')
         .merge(groups.select('circle')) // Update existing circles
-        .attr('r', sizeScale) // Radius is set by the scale
+        // .attr('r', sizeScale) // Radius is set by the scale
+        .attr('r', d => sizeScale(d))
         .attr('fill', circleFill);
 
     groupsEnter.append('text')
         .merge(groups.select('text')) // Update existing text
+        .text(d => d)
         .attr('x', textOffset)
         .attr('y', 0)
-        .attr('dominant-baseline', 'central') // Align text vertically with circles
-        .text(d => d);
+        .attr('text-anchor', 'middle');
 
     // Remove any unwanted elements (exit)
     groups.exit().remove();
-
-    
 };
 
 

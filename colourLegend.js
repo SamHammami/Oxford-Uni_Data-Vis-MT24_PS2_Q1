@@ -29,10 +29,9 @@ export const colourLegend = (parent, props) => {
     groupsEnter
         .append('text')
         .merge(groups.select('text')) // Update existing text
+        .text(d => d)
         .attr('x', textOffset)
-        .attr('y', 0)
-        .attr('dominant-baseline', 'central') // Align text vertically with circles
-        .text(d => d);
+        .attr('y', 0);
 
     // Remove any unwanted elements (exit)
     groups.exit().remove();
