@@ -56,10 +56,8 @@ body {
 
 
 
-
-
 /* Styling the text elements in the legend */
-.legendEntry text {
+.legend text {
     font-family: Arial;
     font-size: 22px;
     fill: #666; 
@@ -67,7 +65,7 @@ body {
 
 
 /* Styling the circle elements in the legend */
-.legendEntry circle {
+.legend circle {
     stroke: #000000;
     stroke-width: 1px;
 }

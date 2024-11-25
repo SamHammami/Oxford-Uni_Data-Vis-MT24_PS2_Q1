@@ -2,16 +2,16 @@ import { colourLegend } from './colourLegend.js';
 import { sizeLegend } from './sizeLegend.js';
 
 
-// const svg = d3.select('svg');
+const svg = d3.select('svg');
 
 // const svg = d3.select('svg')
 //     .attr('width', 400)
 //     .attr('height', 400);
 
 
-const svg = d3.select('svg')
-    .attr('viewBox', '0 0 400 400')
-    .attr('preserveAspectRatio', 'xMidYMid meet');
+// const svg = d3.select('svg')
+//     .attr('viewBox', '0 0 400 400')
+//     .attr('preserveAspectRatio', 'xMidYMid meet');
 
 // Define a colour scale for the colour legend
 const colourScale = d3

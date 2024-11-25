@@ -10,21 +10,18 @@ export const colourLegend = (parent, props) => {
 
     // Select all groups and bind data to each legend entry
     const groups = parent
-        .selectAll('.legendEntry')
+        .selectAll('.legend')
         .data(colourScale.domain());
 
     // Handle the "enter" stage for new elements
-    const groupsEnter = groups
-        .enter()    
+    const groupsEnter = groups.enter()    
         .append('g')
-        .attr('class', 'legendEntry');
+        .attr('class', 'legend');
 
-    groupsEnter
-        .merge(groups) // Merge update and enter selections
+    groupsEnter.merge(groups) // Merge update and enter selections
         .attr('transform', (d, i) => `translate(0, ${i * spacing})`);
 
-    groupsEnter
-        .append('circle')
+    groupsEnter.append('circle')
         .merge(groups.select('circle')) // Update existing circles
         .attr('r', circleRadius)
         .attr('fill', colourScale);
